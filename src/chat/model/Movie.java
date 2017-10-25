@@ -30,13 +30,12 @@ public class Movie
 
 	public String getGenre()
 	{
-		this.genre = "@@@@@@@";
 		return genre;
 	}
 
 	public String getRatingMPAA()
 	{
-		return null;
+		return ratingMPAA;
 	}
 
 	public String getReview()
@@ -46,7 +45,7 @@ public class Movie
 
 	public int getLength()
 	{
-		return -99999999;
+		return length;
 	}
 
 	public LocalDate getReleaseDate()
