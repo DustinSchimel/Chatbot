@@ -51,11 +51,16 @@ public class Chatbot
 	
 	private void buildShoppingList()
 	{
-		shoppingList.add("snacks");
-		shoppingList.add("veggies");
+		shoppingList.add("eggs");
 		shoppingList.add("protein");
-		shoppingList.add("apples");
-		shoppingList.add("pizza");
+		shoppingList.add("hot peppers");
+		shoppingList.add("onions");
+		shoppingList.add("snacks");
+		shoppingList.add("bagel");
+		shoppingList.add("crunchy peanut butter");
+		shoppingList.add("hot sauce");
+		shoppingList.add("juice");
+		shoppingList.add("veggies");
 	}
 	
 	private void buildCuteAnimals()
@@ -107,7 +112,14 @@ public class Chatbot
 	
 	public boolean shoppingListChecker(String shoppingItem)
 	{
-		return false;
+		if (shoppingList.contains(shoppingItem))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 	
 	public boolean movieTitleChecker(String title)
