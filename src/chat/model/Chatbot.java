@@ -24,7 +24,7 @@ public class Chatbot
 		this.shoppingList = new ArrayList<String>();
 		this.cuteAnimalMemes = null;
 		this.currentTime = null;
-		this.questions = new String[4];
+		this.questions = new String[5];
 		this.username = username;
 		this.content = "games are fun";
 		this.intro = null;
@@ -40,10 +40,11 @@ public class Chatbot
 	
 	private void buildQuestions()
 	{
-		questions[0] = "Do you have any dogs?";
+		questions[0] = "What is your name?";
 		questions[1] = "Do you have any cats?";
 		questions[2] = "What's your favorite food?";
 		questions[3] = "what color is your house?";
+		questions[4] = "Do you have any dogs?";
 	}
 	
 	private void buildTopics()
@@ -140,6 +141,26 @@ public class Chatbot
 	public boolean contentChecker(String contentCheck)
 	{
 		if (contentCheck.contains("games"))
+		{
+			return true;
+		}
+		
+		if (contentCheck.contains("dogs"))
+		{
+			return true;
+		}
+		
+		if (contentCheck.contains("cars"))
+		{
+			return true;
+		}
+		
+		if (contentCheck.contains("cats"))
+		{
+			return true;
+		}
+		
+		if (contentCheck.contains("socks"))
 		{
 			return true;
 		}
