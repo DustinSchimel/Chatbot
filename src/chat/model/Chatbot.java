@@ -24,7 +24,7 @@ public class Chatbot
 		this.shoppingList = new ArrayList<String>();
 		this.cuteAnimalMemes = null;
 		this.currentTime = null;
-		this.questions = null;
+		this.questions = new String[4];
 		this.username = username;
 		this.content = "games are fun";
 		this.intro = null;
@@ -34,6 +34,27 @@ public class Chatbot
 		
 		buildVerbs();
 		buildShoppingList();
+		buildTopics();
+		buildQuestions();
+	}
+	
+	private void buildQuestions()
+	{
+		questions[0] = "Do you have any dogs?";
+		questions[1] = "Do you have any cats?";
+		questions[2] = "What's your favorite food?";
+		questions[3] = "what color is your house?";
+	}
+	
+	private void buildTopics()
+	{
+		topics[0] = "science";
+		topics[1] = "games";
+		topics[2] = "food";
+		topics[3] = "dogs";
+		topics[4] = "cats";
+		topics[5] = "life";
+		topics[6] = "gameshows";
 	}
 	
 	private void buildVerbs()
@@ -64,11 +85,6 @@ public class Chatbot
 	}
 	
 	private void buildCuteAnimals()
-	{
-		
-	}
-	
-	private void buildQuestions()
 	{
 		
 	}
@@ -172,9 +188,57 @@ public class Chatbot
 		return false;
 	}
 
-	public boolean keyboardMashChecker(String sample)
+	public boolean keyboardMashChecker(String input)
 	{
-		return false;
+		if (input.contains("S.D.F."))
+		{
+			return false;
+		}
+		else if (input.contains("derf"))
+		{
+			return false;
+		}
+		else if (input.contains("sdf"))
+		{
+			return true;
+		}
+		else if (input.contains("SDF"))
+		{
+			return true;
+		}
+		else if (input.contains("dfg"))
+		{
+			return true;
+		}
+		else if (input.contains("cvb"))
+		{
+			return true;
+		}
+		else if (input.contains(",./"))
+		{
+			return true;
+		}
+		else if (input.contains("kjh"))
+		{
+			return true;
+		}
+		else if (input.contains("DFG"))
+		{
+			return true;
+		}
+		else if (input.contains("CVB"))
+		{
+			return true;
+		}
+		else if (input.contains("KJH"))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+		
 	}
 	
 	public List<Movie> getMovieList()
