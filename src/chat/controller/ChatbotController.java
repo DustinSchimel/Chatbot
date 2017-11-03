@@ -10,7 +10,7 @@ public class ChatbotController
 	
 	public ChatbotController()
 	{
-		chatbot = new Chatbot("Dustin Schimel");
+		chatbot = new Chatbot("Dustin Schimel");	//initilizes data member values
 		display = new PopupDisplay();
 	}
 	
