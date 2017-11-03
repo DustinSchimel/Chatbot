@@ -139,7 +139,7 @@ public class Chatbot
 	}
 	
 	public boolean contentChecker(String contentCheck)
-	{
+	{ 
 		if (contentCheck.contains("games"))
 		{
 			return true;
@@ -211,15 +211,7 @@ public class Chatbot
 
 	public boolean keyboardMashChecker(String input)
 	{
-		if (input.contains("S.D.F."))
-		{
-			return false;
-		}
-		else if (input.contains("derf"))
-		{
-			return false;
-		}
-		else if (input.contains("sdf"))
+		if (input.contains("sdf"))
 		{
 			return true;
 		}
