@@ -135,6 +135,12 @@ public class Chatbot
 		random = (int) (Math.random() * questions.length);
 		response += questions[random];
 		
+		if (random % 2 == 0)
+		{
+			random = (int) (Math.random() * shoppingList.size());
+			response += "\n" + shoppingList.get(random) + " is a great item!";
+		}
+		
 		return response;
 	}
 	
