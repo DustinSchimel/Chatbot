@@ -1,7 +1,8 @@
 package chat.controller;
 
-import chat.view.PopupDisplay;
 import chat.model.Chatbot;
+import chat.view.PopupDisplay;
+import chat.view.ChatFrame;
 
 public class ChatbotController
 {
@@ -12,17 +13,18 @@ public class ChatbotController
 	{
 		chatbot = new Chatbot("Dustin Schimel");	//initilizes data member values
 		display = new PopupDisplay();
+		appFrame = new ChatFrame(this);
 	}
 	
 	public void start()
 	{
 		String response = display.collectResponse("What do you want to talk about?");	//Prompts the user for a response
 		
-		while (chatbot.lengthChecker(response) && !chatbot.quitChecker(response))		//Checks for if the user's response is greater than or equal to three, not null,
+		/*while (chatbot.lengthChecker(response) && !chatbot.quitChecker(response))		//Checks for if the user's response is greater than or equal to three, not null,
 		{																			//and that it's not the word 'quit'
 			response = popupChat(response);											//Calls popupChat and gives it response
 			response = display.collectResponse(response);								//Displays the users response, bot statement and question, the user can then answer and it will loop
-		}
+		}*/
 	}
 	
 	private String popupChat(String chat)
