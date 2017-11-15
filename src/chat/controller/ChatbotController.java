@@ -8,6 +8,7 @@ public class ChatbotController
 {
 	private Chatbot chatbot;
 	private PopupDisplay display;
+	private ChatFrame appFrame;
 	
 	public ChatbotController()
 	{
