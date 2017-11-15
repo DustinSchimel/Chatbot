@@ -6,22 +6,23 @@ import javax.swing.JFrame;
 public class ChatFrame extends JFrame
 {
 	private ChatbotController appController;
-	private ChatPanel appPane;
+	//private ChatPanel appPanel;
 	
 	public ChatFrame(ChatbotController appController)
 	{
 		super();
 		this.appController = appController;
-		appPane = new ChatPanel(appController);
+		//appPanel = new ChatPanel(appController);
+		
 		setupFrame();
 	}
 	
 	private void setupFrame()
 	{
-		this.setContentPane(appPane);
+		//this.setContentPane(appPanel); //this line SHOULD be first
 		this.setTitle("Chatting with John");
 		this.setResizable(false);
-		this.setSize(600, 600);
-		this.setVisible(true);
+		this.setSize(500, 500);
+		this.setVisible(true); //this line must be last
 	}
 }
