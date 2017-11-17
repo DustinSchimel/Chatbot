@@ -25,13 +25,16 @@ public class ChatbotController
 	 */
 	public void start()
 	{
-		String response = display.collectResponse("What do you want to talk about?");
+		display.displayText("Hello, my name is John");
+	}
+	
+	public String interactWithChatbot(String input)
+	{
+		String chatbotSays = "";
 		
-		/*while (chatbot.lengthChecker(response) && !chatbot.quitChecker(response))		//Checks for if the user's response is greater than or equal to three, not null,
-		{																			//and that it's not the word 'quit'
-			response = popupChat(response);											//Calls popupChat and gives it response
-			response = display.collectResponse(response);								//Displays the users response, bot statement and question, the user can then answer and it will loop
-		}*/
+		chatbot.processConversation(input);
+		
+		return chatbotSays;
 	}
 	
 	/**
