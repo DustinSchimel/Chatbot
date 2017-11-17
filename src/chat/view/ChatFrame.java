@@ -8,6 +8,10 @@ public class ChatFrame extends JFrame
 	private ChatbotController appController;
 	private ChatPanel appPanel;
 	
+	/**
+	 * 
+	 * @param appController
+	 */
 	public ChatFrame(ChatbotController appController)
 	{
 		super();
@@ -17,6 +21,9 @@ public class ChatFrame extends JFrame
 		setupFrame();
 	}
 	
+	/**
+	 * Sets up GUI frame settings 
+	 */
 	private void setupFrame()
 	{
 		this.setContentPane(appPanel); //this line SHOULD be first

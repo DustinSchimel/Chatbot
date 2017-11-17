@@ -7,6 +7,8 @@ import javax.swing.JTextArea;
 import javax.swing.SpringLayout;
 import chat.controller.ChatbotController;
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class ChatPanel extends JPanel
 {
@@ -57,13 +59,14 @@ public class ChatPanel extends JPanel
 	
 	private void setupListeners()
 	{
-		chatButton.addActionListener(new ActionListener()
+		/*chatButton.addActionListener(new ActionListener()
 		{
 				public void actionPerformed(ActionEvent click)
 				{
 					chatArea.append(getUserInput());
 				}
 		});
+		*/
 	}
 	
 	private String getUserInput()
