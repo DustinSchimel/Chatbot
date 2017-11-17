@@ -62,7 +62,7 @@ public class ChatbotController
 	}
 	
 	/**
-	 * Creates a new String and processes the text and then returns it
+	 * Creates a new String, processes the text and then returns it
 	 * @param chat
 	 * @return chatbotSays
 	 */
