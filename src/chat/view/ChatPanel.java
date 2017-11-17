@@ -10,6 +10,11 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Creates a panel for the bot to be able to display information to the user, and for the user to send input
+ * @author dsch3401
+ * 
+ */
 public class ChatPanel extends JPanel
 {
 	private ChatbotController appController;
@@ -19,12 +24,15 @@ public class ChatPanel extends JPanel
 	private SpringLayout appLayout;
 	private JButton checkerButton;
 	
+	/**
+	 * Initializes GUI data members and calls other methods
+	 * @param appController
+	 */
 	public ChatPanel(ChatbotController appController)
 	{
 		super();
 		this.appController = appController;
 		
-		//Initialize GUI data members
 		chatButton = new JButton("chat");
 		checkerButton = new JButton("Check");
 		chatArea = new JTextArea(10, 25);
@@ -36,6 +44,9 @@ public class ChatPanel extends JPanel
 		setupListeners();
 	}
 	
+	/**
+	 * Sets certain settings for the panel on start
+	 */
 	private void setupPanel()
 	{
 		this.setBackground(Color.GREEN);
@@ -49,6 +60,9 @@ public class ChatPanel extends JPanel
 		
 	}
 	
+	/**
+	 * Sets positioning of GUI elements
+	 */
 	private void setupLayout()
 	{
 		appLayout.putConstraint(SpringLayout.NORTH, chatArea, 20, SpringLayout.NORTH, this);
@@ -62,6 +76,9 @@ public class ChatPanel extends JPanel
 		appLayout.putConstraint(SpringLayout.EAST, checkerButton, 0, SpringLayout.EAST, chatButton);
 	}
 	
+	/**
+	 * Creates listeners for two buttons to send information to the chatbot
+	 */
 	private void setupListeners()
 	{
 		chatButton.addActionListener(new ActionListener()
@@ -74,5 +91,14 @@ public class ChatPanel extends JPanel
 					inputField.setText("");
 				}
 		});
+		
+		/*checkerButton.addActionListener(new ActionListener()
+		{
+				public void actionPerformed(ActionEvent click)
+				{
+					
+				}
+		});
+		*/
 	}
 }
