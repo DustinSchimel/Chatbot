@@ -32,6 +32,11 @@ public class ChatbotController
 	{
 		String chatbotSays = "";
 		
+		if(chatbot.quitChecker(input))
+		{
+			close();
+		}
+		
 		chatbotSays += chatbot.processConversation(input);
 		
 		return chatbotSays;
