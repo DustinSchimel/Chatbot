@@ -18,6 +18,10 @@ public class Chatbot
 	private String intro;
 	private LocalTime currentTime;
 	
+	/**
+	 * Initializes data members and calls other methods
+	 * @param username
+	 */
 	public Chatbot(String username)
 	{
 		this.movieList = null;
@@ -38,6 +42,9 @@ public class Chatbot
 		buildQuestions();
 	}
 	
+	/**
+	 * Creates questions for the bot to ask from an array
+	 */
 	private void buildQuestions()
 	{
 		questions[0] = "What is your name?";
@@ -47,6 +54,9 @@ public class Chatbot
 		questions[4] = "Do you have any dogs?";
 	}
 	
+	/**
+	 * Creates topics for the bot to mention in a conversation from an array
+	 */
 	private void buildTopics()
 	{
 		topics[0] = "science";
@@ -58,6 +68,9 @@ public class Chatbot
 		topics[6] = "gameshows";
 	}
 	
+	/**
+	 * Creates verbs for the bot to use when describing a topic from an array
+	 */
 	private void buildVerbs()
 	{
 		verbs[0] = "like";
@@ -66,11 +79,18 @@ public class Chatbot
 		verbs[3] = "am thinking about";
 	}
 
+	/**
+	 * TODO
+	 * Builds movies into a list
+	 */
 	private void buildMovieList()
 	{
 	
 	}
 	
+	/**
+	 * Adds shopping items to a list for the bot's use
+	 */
 	private void buildShoppingList()
 	{
 		shoppingList.add("eggs");
@@ -85,11 +105,20 @@ public class Chatbot
 		shoppingList.add("veggies");
 	}
 	
+	/**
+	 * TODO
+	 * Adds cute animals to a list? I'm not sure yet
+	 **/
 	private void buildCuteAnimals()
 	{
 		
 	}
 	
+	/**
+	 * Checks for if the string provided to the bot is greater than two and not null
+	 * @param input
+	 * @return
+	 */
 	public boolean lengthChecker(String input)
 	{
 		boolean validLength = false;
@@ -102,16 +131,33 @@ public class Chatbot
 		return validLength;
 	}
 	
+	/**
+	 * TODO
+	 * Not sure yet, but I'm guessing it checks for if there are HTML elements in a user's response
+	 * @param input
+	 * @return
+	 */
 	public boolean htmlTagChecker(String input)
 	{
 		return false;
 	}
 	
+	/**
+	 * TODO
+	 * Not sure yet, but I'm guessing it will check for if a provided username matches one that the bot stores
+	 * @param input
+	 * @return
+	 */
 	public boolean userNameChecker(String input)
 	{
 		return false;
 	}
 	
+	/**
+	 * Turns the user's input into a different string that the bot displays to the user
+	 * @param input
+	 * @return
+	 */
 	public String processConversation(String input)
 	{
 		String chatbotResponse = "";
@@ -122,6 +168,10 @@ public class Chatbot
 		return chatbotResponse;
 	}
 	
+	/**
+	 * Uses random numbers to grab data from different arrays to make a question and topic for the bot to talk about
+	 * @return response
+	 */
 	private String buildChatbotResponse()
 	{
 		String response = "I ";
@@ -144,6 +194,12 @@ public class Chatbot
 		return response;
 	}
 	
+	/**
+	 * Checks for if the user's input contains any of these words, if it does it will return true
+	 * and vice versa
+	 * @param contentCheck
+	 * @return true || false
+	 */
 	public boolean contentChecker(String contentCheck)
 	{ 
 		if (contentCheck.contains("games"))
@@ -183,11 +239,22 @@ public class Chatbot
 		
 	}
 	
+	/**
+	 * TODO
+	 * I'm not sure yet, but I'm guessing it checks for if the user's response contains a cute animal meme
+	 * @param input
+	 * @return
+	 */
 	public boolean cuteAnimalMemeChecker(String input)
 	{
 		return false;
 	}
 	
+	/**
+	 * 
+	 * @param shoppingItem
+	 * @return true || false
+	 */
 	public boolean shoppingListChecker(String shoppingItem)
 	{
 		
@@ -202,21 +269,41 @@ public class Chatbot
 		return false;	
 	}
 	
+	/**
+	 * TODO
+	 * @param title
+	 * @return
+	 */
 	public boolean movieTitleChecker(String title)
 	{
 		return false;
 	}
 	
+	/**
+	 * TODO
+	 * @param genre
+	 * @return
+	 */
 	public boolean movieGenreChecker(String genre)
 	{
 		return false;
 	}
 
+	/**
+	 * TODO
+	 * @param exitString
+	 * @return
+	 */
 	public boolean quitChecker(String exitString)
 	{
 		return false;
 	}
 
+	/**
+	 * Checks for if the user 'mashed their keyboard' by checking to see if their input contains any of these strings
+	 * @param input
+	 * @return true || false
+	 */
 	public boolean keyboardMashChecker(String input)
 	{
 		if (input.contains("sdf"))

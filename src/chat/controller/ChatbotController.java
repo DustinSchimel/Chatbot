@@ -10,16 +10,22 @@ public class ChatbotController
 	private PopupDisplay display;
 	private ChatFrame appFrame;
 	
+	/**
+	 * Initializes data member values
+	 */
 	public ChatbotController()
 	{
-		chatbot = new Chatbot("Dustin Schimel");	//initilizes data member values
+		chatbot = new Chatbot("Dustin Schimel");
 		display = new PopupDisplay();
 		appFrame = new ChatFrame(this);
 	}
 	
+	/**
+	 * Prompts the user for a response
+	 */
 	public void start()
 	{
-		String response = display.collectResponse("What do you want to talk about?");	//Prompts the user for a response
+		String response = display.collectResponse("What do you want to talk about?");
 		
 		/*while (chatbot.lengthChecker(response) && !chatbot.quitChecker(response))		//Checks for if the user's response is greater than or equal to three, not null,
 		{																			//and that it's not the word 'quit'
@@ -28,6 +34,11 @@ public class ChatbotController
 		}*/
 	}
 	
+	/**
+	 * Creates a new String and processes the text and then returns it
+	 * @param chat
+	 * @return chatbotSays
+	 */
 	private String popupChat(String chat)
 	{
 		String chatbotSays = "";														//Creates a new variable with the value ""
