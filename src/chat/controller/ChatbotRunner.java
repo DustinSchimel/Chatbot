@@ -2,7 +2,7 @@ package chat.controller;
 
 /**
  * Runs the project by calling the ChatbotController
- * @author dsch3401
+ * @author Dustin Schimel
  *
  */
 public class ChatbotRunner

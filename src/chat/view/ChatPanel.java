@@ -12,7 +12,7 @@ import java.awt.event.ActionListener;
 
 /**
  * Creates a panel for the bot to be able to display information to the user, and for the user to send input
- * @author dsch3401
+ * @author Dustin Schimel
  * 
  */
 public class ChatPanel extends JPanel

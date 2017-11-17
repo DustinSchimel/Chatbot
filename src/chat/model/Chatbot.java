@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 /**
  * Model for everything that the chatbot uses
- * @author dsch3401
+ * @author Dustin Schimel
  *
  */
 public class Chatbot
