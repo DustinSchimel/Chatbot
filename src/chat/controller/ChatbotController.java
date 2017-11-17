@@ -4,6 +4,11 @@ import chat.model.Chatbot;
 import chat.view.PopupDisplay;
 import chat.view.ChatFrame;
 
+/**
+ * Controller for chatbot that calls all needed files
+ * @author Dustin Schimel
+ *
+ */
 public class ChatbotController
 {
 	private Chatbot chatbot;
@@ -28,6 +33,11 @@ public class ChatbotController
 		display.displayText("Hello, my name is John");
 	}
 	
+	/**
+	 * Gets called by a listener and then processes the user's input and then displays text to them
+	 * @param input
+	 * @return
+	 */
 	public String interactWithChatbot(String input)
 	{
 		String chatbotSays = "";
@@ -42,6 +52,9 @@ public class ChatbotController
 		return chatbotSays;
 	}
 	
+	/**
+	 * Displays a message to the user and then closes the chatbot
+	 */
 	private void close()
 	{
 		display.displayText("Goodbye");
