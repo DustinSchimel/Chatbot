@@ -19,7 +19,7 @@ public class Movie
 		this.ratingMPAA = "";
 		this.review = "";
 		this.length = 0;
-		this.releaseDate = releaseDate;	//may need to fix this
+		this.releaseDate = LocalDate;	//may need to fix this
 		this.starScore = 0;
 	}
 

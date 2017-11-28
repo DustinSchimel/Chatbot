@@ -148,7 +148,31 @@ public class Chatbot
 	 */
 	public boolean htmlTagChecker(String input)
 	{
-		return false;
+		String lowerCaseInput = input.toLowerCase();
+		
+		if (!input.contains("<") || !input.contains(">"))
+		{
+			return false;
+		}
+		else if(input.contains("< >"))
+		{
+			return false;
+		}
+		else if(lowerCaseInput.contains("<b>") && lowerCaseInput.contains("</b>"))
+		{
+			return true;
+		} //Don't want to hardcode b
+		
+		
+		else if(lowerCaseInput.substring(0).contains("<") && lowerCaseInput.indexOf() != -1)
+		{
+			
+		}
+		
+		else
+		{
+			return false;
+		}
 	}
 	
 	/**
