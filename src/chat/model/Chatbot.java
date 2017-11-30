@@ -150,24 +150,62 @@ public class Chatbot
 	{
 		String lowerCaseInput = input.toLowerCase();
 		
-		if (!input.contains("<") || !input.contains(">"))
+		if (lowerCaseInput == null || !lowerCaseInput.contains("<") || !lowerCaseInput.contains(">"))
 		{
 			return false;
 		}
-		else if(input.contains("< >"))
+		int firstOpen = lowerCaseInput.indexOf("<");
+		int firstClose = lowerCaseInput.indexOf(">", firstOpen);
+		int secondOpen = -9;
+		int secondClose = -9;
+		String tagText = "";
+		
+		//Check bad tags
+		if(lowerCaseInput.contains("<>") || lowerCaseInput.indexOf("< >") > -1)
 		{
 			return false;
 		}
-		else if(lowerCaseInput.contains("<b>") && lowerCaseInput.contains("</b>"))
-		{
-			return true;
-		} //Don't want to hardcode b
 		
-		
-		else if(lowerCaseInput.substring(0).contains("<") && lowerCaseInput.indexOf() != -1)
+		//check singleton
+		if(lowerCaseInput.contains("<p>") || lowerCaseInput.contains("<br>"))
 		{
-			
+			return false;
 		}
+		
+		//check others
+		else if(firstClose > firstOpen)
+		{
+			//Others
+			tagText = lowerCaseInput.substring(firstOpen + 1, firstClose);
+			secondOpen = lowerCaseInput.indexOf("</" + tagText, firstClose);
+		}
+		
+		
+		
+		//else if(lowerCaseInput.contains("< >"))
+		//{
+		//	return false;
+		//}
+		
+		
+		
+		
+		
+		//else if(lowerCaseInput.contains("<b>") && lowerCaseInput.contains("</b>"))
+		//{
+		//	return true;
+		//} //Don't want to hardcode b
+		
+		
+		//else if(lowerCaseInput.substring(0,1).equals("<") && lowerCaseInput.indexOf(">") != -1
+		//												 && lowerCaseInput.indexOf(">") != 0
+		//												 && lowerCaseInput.indexOf(">") != 1
+		//												 && lowerCaseInput.indexOf("<", 3) != -1
+		//												 && lowerCaseInput.indexOf(">", 3) != -1)
+		//{
+		//	return true;
+		//}
+		//else if NEED TO USE LOOP
 		
 		else
 		{
