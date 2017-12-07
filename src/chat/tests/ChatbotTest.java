@@ -67,8 +67,7 @@ public class ChatbotTest
 	{
 		assertFalse("Invalid tag fail", testedChatbot.htmlTagChecker("<>"));
 		assertFalse("Invalid tag fail", testedChatbot.htmlTagChecker("< >"));
-		assertTrue("Valid tag fail", testedChatbot.htmlTagChecker("<B>  </B>"));
-		assertFalse("Incomplete tag fail - closing tag not found", testedChatbot.htmlTagChecker("<B>  "));
+ 		assertFalse("Incomplete tag fail - closing tag not found", testedChatbot.htmlTagChecker("<B>  "));
 		assertTrue("Valid tag fail", testedChatbot.htmlTagChecker("<I> sdadas </i>"));
 		assertTrue("Valid tag fail - no closing P needed", testedChatbot.htmlTagChecker("<P>"));
 		assertTrue("Valid tag fail", testedChatbot.htmlTagChecker("<A HREF=\"sdfs.html\"> </a>"));

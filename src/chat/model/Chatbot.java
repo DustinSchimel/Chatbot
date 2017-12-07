@@ -29,10 +29,10 @@ public class Chatbot
 	 */
 	public Chatbot(String username)
 	{
-		this.movieList = null;
+		this.movieList = new ArrayList<Movie>();
 		this.shoppingList = new ArrayList<String>();
 		this.cuteAnimalMemes = new ArrayList<String>();
-		this.currentTime = null;
+		this.currentTime = LocalTime.now();
 		this.questions = new String[5];
 		this.username = username;
 		this.content = "games are fun";
@@ -169,45 +169,34 @@ public class Chatbot
 		//check singleton
 		if(lowerCaseInput.contains("<p>") || lowerCaseInput.contains("<br>"))
 		{
-			return false;
+			return true;
 		}
 		
 		//check others
 		else if(firstClose > firstOpen)
 		{
-			//Others
 			tagText = lowerCaseInput.substring(firstOpen + 1, firstClose);
 			secondOpen = lowerCaseInput.indexOf("</" + tagText, firstClose);
+			secondClose = lowerCaseInput.indexOf(">", secondOpen);
+			
+			if (secondOpen == -1 || secondClose == -1) 
+			{
+				return false;
+			}
+			else if (tagText.contains("a href") && !tagText.contains("="))
+			{
+				return false;
+			}
+			else if (secondClose > secondOpen)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
 		}
-		
-		
-		
-		//else if(lowerCaseInput.contains("< >"))
-		//{
-		//	return false;
-		//}
-		
-		
-		
-		
-		
-		//else if(lowerCaseInput.contains("<b>") && lowerCaseInput.contains("</b>"))
-		//{
-		//	return true;
-		//} //Don't want to hardcode b
-		
-		
-		//else if(lowerCaseInput.substring(0,1).equals("<") && lowerCaseInput.indexOf(">") != -1
-		//												 && lowerCaseInput.indexOf(">") != 0
-		//												 && lowerCaseInput.indexOf(">") != 1
-		//												 && lowerCaseInput.indexOf("<", 3) != -1
-		//												 && lowerCaseInput.indexOf(">", 3) != -1)
-		//{
-		//	return true;
-		//}
-		//else if NEED TO USE LOOP
-		
-		else
+		else 
 		{
 			return false;
 		}
@@ -232,6 +221,8 @@ public class Chatbot
 	public String processConversation(String input)
 	{
 		String chatbotResponse = "";
+		currentTime = LocalTime.now();
+		chatbotResponse += currentTime.getHour() + ":" + currentTime.getMinute() + " ";
 		chatbotResponse += "You said:" + "\n" + input + "\n";
 		
 		chatbotResponse += buildChatbotResponse();
