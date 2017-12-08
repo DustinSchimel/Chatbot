@@ -219,7 +219,14 @@ public class Chatbot
 	 */
 	public boolean userNameChecker(String input)
 	{
-		return false;
+		if (input.substring(0, 1).equals("@"))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 	
 	/**
