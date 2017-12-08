@@ -141,43 +141,52 @@ public class Chatbot
 	}
 	
 	/**
-	 * TODO
-	 * Not sure yet, but I'm guessing it checks for if there are HTML elements in a user's response
+	 * Checks for if the input contains proper HTML
 	 * @param input
 	 * @return
 	 */
 	public boolean htmlTagChecker(String input)
 	{
+		//turns the input into lowercase
 		String lowerCaseInput = input.toLowerCase();
 		
+		//checks that the input is not null, contains < & >
 		if (lowerCaseInput == null || !lowerCaseInput.contains("<") || !lowerCaseInput.contains(">"))
 		{
 			return false;
 		}
+		
 		int firstOpen = lowerCaseInput.indexOf("<");
 		int firstClose = lowerCaseInput.indexOf(">", firstOpen);
 		int secondOpen = -9;
 		int secondClose = -9;
-		String tagText = "";
+		String tagText = lowerCaseInput.substring(firstOpen + 1, firstClose);
 		
-		//Check bad tags
-		if(lowerCaseInput.contains("<>") || lowerCaseInput.indexOf("< >") > -1)
+		//checks bad/empty tags
+		if(lowerCaseInput.contains("<>") || lowerCaseInput.contains("< >"))
 		{
 			return false;
 		}
 		
-		//check singleton
-		if(lowerCaseInput.contains("<p>") || lowerCaseInput.contains("<br>"))
+		//checks singleton
+		else if(lowerCaseInput.contains("<p>") || lowerCaseInput.contains("<br>"))
 		{
 			return true;
 		}
 		
-		//check others
+		//checks others
 		else if(firstClose > firstOpen)
 		{
-			tagText = lowerCaseInput.substring(firstOpen + 1, firstClose);
-			secondOpen = lowerCaseInput.indexOf("</" + tagText, firstClose);
-			secondClose = lowerCaseInput.indexOf(">", secondOpen);
+			if (tagText.contains("a href="))
+			{
+				secondOpen = lowerCaseInput.indexOf("</", firstClose);
+				secondClose = lowerCaseInput.indexOf(">", secondOpen);
+			}
+			else
+			{
+				secondOpen = lowerCaseInput.indexOf("</" + tagText, firstClose);
+				secondClose = lowerCaseInput.indexOf(">", secondOpen);
+			}
 			
 			if (secondOpen == -1 || secondClose == -1) 
 			{
