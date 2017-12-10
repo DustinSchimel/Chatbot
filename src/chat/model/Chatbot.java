@@ -401,7 +401,7 @@ public class Chatbot
 	}
 
 	/**
-	 * TODO
+	 * Checks for if the user types the quit keyword
 	 * @param exitString
 	 * @return
 	 */
