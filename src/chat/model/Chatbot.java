@@ -407,7 +407,22 @@ public class Chatbot
 	 */
 	public boolean quitChecker(String exitString)
 	{
-		return false;
+		if (exitString == null)
+		{
+			return false;
+		}
+		else if (exitString.equals(""))
+		{
+			return false;
+		}
+		else if (exitString.equals("Quit") || exitString.equals("quit") || exitString.equals("QUIT"))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 
 	/**
