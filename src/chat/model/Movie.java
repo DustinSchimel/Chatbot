@@ -19,7 +19,7 @@ public class Movie
 		this.ratingMPAA = "";
 		this.review = "";
 		this.length = 0;
-		this.releaseDate = LocalDate;	//may need to fix this
+		this.releaseDate = releaseDate;	//may need to fix this
 		this.starScore = 0;
 	}
 
@@ -95,6 +95,8 @@ public class Movie
 	
 	public String toString()
 	{
-		return null;
+		String description = "This is a movie description";
+		
+		return description;
 	}
 }
