@@ -91,7 +91,7 @@ public class Chatbot
 	}
 
 	/**
-	 * TODO
+	 * TODO - Puts movies into the movie list
 	 * Builds movies into a list
 	 */
 	private void buildMovieList()
@@ -383,7 +383,7 @@ public class Chatbot
 	}
 	
 	/**
-	 * TODO
+	 * TODO - Checks the movie list for certain titles
 	 * @param title
 	 * @return
 	 */
@@ -393,7 +393,7 @@ public class Chatbot
 	}
 	
 	/**
-	 * TODO
+	 * TODO - Checks the movie list for certain genres
 	 * @param genre
 	 * @return
 	 */

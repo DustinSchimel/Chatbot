@@ -3,13 +3,18 @@ package chat.view;
 import chat.controller.ChatbotController;
 import javax.swing.JFrame;
 
+/**
+ * Creates a frame for the panel to sit in
+ * @author Dustin Schimel
+ *
+ */
 public class ChatFrame extends JFrame
 {
 	private ChatbotController appController;
 	private ChatPanel appPanel;
 	
 	/**
-	 * 
+	 * Creates a new chat panel and calls setupFrame
 	 * @param appController
 	 */
 	public ChatFrame(ChatbotController appController)

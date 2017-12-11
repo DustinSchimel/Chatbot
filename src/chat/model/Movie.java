@@ -1,7 +1,12 @@
 package chat.model;
 
 import java.time.LocalDate;
-
+/**
+ * 
+ * Model that relates to every aspect of the movies
+ * @author Dustin Schimel
+ *
+ */
 public class Movie
 {
 	private String title;
@@ -12,6 +17,10 @@ public class Movie
 	private LocalDate releaseDate;
 	private double starScore;
 	
+	/**
+	 * Initializes all the data members
+	 * @param title
+	 */
 	public Movie(String title)
 	{
 		this.title = "";
