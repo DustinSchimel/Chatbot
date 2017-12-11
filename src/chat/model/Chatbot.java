@@ -33,7 +33,7 @@ public class Chatbot
 		this.shoppingList = new ArrayList<String>();
 		this.cuteAnimalMemes = new ArrayList<String>();
 		this.currentTime = LocalTime.now();
-		this.questions = new String[5];
+		this.questions = new String[10];
 		this.username = username;
 		this.content = "games are fun";
 		this.intro = "Hi, I'm john and I love to talk fellow humans.";
@@ -58,6 +58,11 @@ public class Chatbot
 		questions[2] = "What's your favorite food?";
 		questions[3] = "what color is your house?";
 		questions[4] = "Do you have any dogs?";
+		questions[5] = "How tall are you?";
+		questions[6] = "What's your favorite drink?";
+		questions[7] = "Where do you live?";
+		questions[8] = "Are you having a nice day?";
+		questions[9] = "What's your favorite cereal?";
 	}
 	
 	/**
@@ -535,5 +540,12 @@ public class Chatbot
 	public void setContent(String content)
 	{
 		this.content = content;
+	}
+	
+	public String toString()
+	{
+		String description = "Hello, my name is John and I like to talk to humans!";
+		
+		return description;
 	}
 }
