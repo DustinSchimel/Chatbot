@@ -112,8 +112,7 @@ public class Chatbot
 	}
 	
 	/**
-	 * TODO
-	 * Adds cute animals to a list? I'm not sure yet
+	 * Adds cute animals to a list
 	 **/
 	private void buildCuteAnimals()
 	{
@@ -212,8 +211,7 @@ public class Chatbot
 	}
 	
 	/**
-	 * TODO
-	 * Not sure yet, but I'm guessing it will check for if a provided username matches one that the bot stores
+	 * Checks for if a provided username meets the criteria
 	 * @param input
 	 * @return
 	 */
@@ -344,8 +342,7 @@ public class Chatbot
 	}
 	
 	/**
-	 * TODO
-	 * I'm not sure yet, but I'm guessing it checks for if the user's response contains a cute animal meme
+	 * Checks for if the cuteAnimalMeme list contains certain animals
 	 * @param input
 	 * @return
 	 */
@@ -362,7 +359,7 @@ public class Chatbot
 	}
 	
 	/**
-	 * 
+	 * Goes through the shopping list to check for certain items
 	 * @param shoppingItem
 	 * @return true || false
 	 */
@@ -492,7 +489,7 @@ public class Chatbot
 
 	public String [] getQuestions()
 	{
-		return null;
+		return questions;
 	}
 	
 	public String[] getVerbs()
@@ -522,12 +519,12 @@ public class Chatbot
 
 	public String getIntro()
 	{
-		return null;
+		return intro;
 	}
 	
 	public LocalTime getCurrentTime()
 	{
-		return null;
+		return currentTime;
 	}
 	
 	public void setUsername(String username)
