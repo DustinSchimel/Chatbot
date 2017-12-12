@@ -35,7 +35,7 @@ public class Chatbot
 		this.currentTime = LocalTime.now();
 		this.questions = new String[10];
 		this.username = username;
-		this.content = "games are fun";
+		this.content = "What a sunny day";
 		this.intro = "Hi, I'm john and I love to talk fellow humans.";
 		this.topics = new String[7];
 		this.verbs = new String [4];
@@ -302,39 +302,13 @@ public class Chatbot
 	}
 	
 	/**
-	 * Checks for if the user's input contains any of these words, if it does it will return true
-	 * and vice versa
-	 * @param contentCheck
+	 * Checks for if the user's input contains any of the content in the content string
+	 * @param input
 	 * @return true || false
 	 */
-	public boolean contentChecker(String contentCheck)
-	{ 
-		if (contentCheck.contains("games"))
-		{
-			return true;
-		}
-		
-		if (contentCheck.contains("dogs"))
-		{
-			return true;
-		}
-		
-		if (contentCheck.contains("cars"))
-		{
-			return true;
-		}
-		
-		if (contentCheck.contains("cats"))
-		{
-			return true;
-		}
-		
-		if (contentCheck.contains("socks"))
-		{
-			return true;
-		}
-		
-		else if (contentCheck.contains("sfd"))
+	public boolean contentChecker(String input)
+	{ 	
+		if (content.contains(input))
 		{
 			return true;
 		}
