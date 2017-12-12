@@ -308,7 +308,7 @@ public class Chatbot
 	 */
 	public boolean contentChecker(String input)
 	{ 	
-		if (content.contains(input))
+		if (input.contains(content))
 		{
 			return true;
 		}
