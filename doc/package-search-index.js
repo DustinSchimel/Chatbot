@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"chat.controller"},{"l":"chat.model"},{"l":"chat.tests"},{"l":"chat.view"}]
