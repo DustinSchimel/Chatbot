@@ -21,14 +21,14 @@ public class Movie
 	 * Initializes all the data members
 	 * @param title
 	 */
-	public Movie(String title)
+	public Movie(String title, String genre, String ratingMPA, String review, int length, LocalDate releaseDate, double starScore)
 	{
 		this.title = "";
 		this.genre = "";
 		this.ratingMPAA = "";
 		this.review = "";
 		this.length = 0;
-		this.releaseDate = releaseDate;	//may need to fix this
+		this.releaseDate = LocalDate.now();	//may need to fix this
 		this.starScore = 0;
 	}
 

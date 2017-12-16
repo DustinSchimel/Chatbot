@@ -1,8 +1,10 @@
 package chat.model;
 
 import java.util.List;
+import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import chat.model.Movie;
 
 /**
  * Model for everything that the chatbot uses
@@ -46,6 +48,7 @@ public class Chatbot
 		buildTopics();
 		buildQuestions();
 		buildCuteAnimals();
+		buildMovieList();
 	}
 	
 	/**
@@ -96,7 +99,16 @@ public class Chatbot
 	 */
 	private void buildMovieList()
 	{
-	
+		Movie firstMovie = new Movie("SpiderMan", "Action", "PG13", "9/10", 130, LocalDate.now(), 4.5);
+		Movie secondMovie = new Movie("SpiderMan", "Action", "PG13", "9/10", 130, LocalDate.now(), 4.5);
+		Movie thirdMovie = new Movie("SpiderMan", "Action", "PG13", "9/10", 130, LocalDate.now(), 4.5);
+		Movie fourthMovie = new Movie("SpiderMan", "Action", "PG13", "9/10", 130, LocalDate.now(), 4.5);
+		Movie fifthMovie = new Movie("SpiderMan", "Action", "PG13", "9/10", 130, LocalDate.now(), 4.5);
+		movieList.add(firstMovie);
+		movieList.add(secondMovie);
+		movieList.add(thirdMovie);
+		movieList.add(fourthMovie);
+		movieList.add(fifthMovie);
 	}
 	
 	/**
