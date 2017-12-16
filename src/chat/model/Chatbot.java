@@ -94,21 +94,23 @@ public class Chatbot
 	}
 
 	/**
-	 * TODO - Puts movies into the movie list
 	 * Builds movies into a list
 	 */
 	private void buildMovieList()
 	{
-		Movie firstMovie = new Movie("SpiderMan", "Action", "PG13", "9/10", 130, LocalDate.now(), 4.5);
-		Movie secondMovie = new Movie("SpiderMan", "Action", "PG13", "9/10", 130, LocalDate.now(), 4.5);
-		Movie thirdMovie = new Movie("SpiderMan", "Action", "PG13", "9/10", 130, LocalDate.now(), 4.5);
-		Movie fourthMovie = new Movie("SpiderMan", "Action", "PG13", "9/10", 130, LocalDate.now(), 4.5);
-		Movie fifthMovie = new Movie("SpiderMan", "Action", "PG13", "9/10", 130, LocalDate.now(), 4.5);
+		Movie firstMovie = new Movie("Spiderman", "Action", "PG13", "9/10", 130, LocalDate.now(), 4.5);
+		Movie secondMovie = new Movie("Hidden Figures", "Action", "PG13", "9/10", 130, LocalDate.now(), 4.5);
+		Movie thirdMovie = new Movie("Spiderman", "Action", "PG13", "9/10", 130, LocalDate.now(), 4.5);
+		Movie fourthMovie = new Movie("Spiderman", "Action", "PG13", "9/10", 130, LocalDate.now(), 4.5);
+		Movie fifthMovie = new Movie("Spiderman", "Action", "PG13", "9/10", 130, LocalDate.now(), 4.5);
+		Movie sixthMovie = new Movie("Spiderman", "Action", "PG13", "9/10", 130, LocalDate.now(), 4.5);
+		
 		movieList.add(firstMovie);
 		movieList.add(secondMovie);
 		movieList.add(thirdMovie);
 		movieList.add(fourthMovie);
 		movieList.add(fifthMovie);
+		movieList.add(sixthMovie);
 	}
 	
 	/**
@@ -126,6 +128,7 @@ public class Chatbot
 		shoppingList.add("hot sauce");
 		shoppingList.add("juice");
 		shoppingList.add("veggies");
+		shoppingList.add("walnuts");
 	}
 	
 	/**
@@ -375,7 +378,20 @@ public class Chatbot
 	 */
 	public boolean movieTitleChecker(String title)
 	{
+		for(int index = 0; index < movieList.size(); index++)
+		{
+			String titleCheck = movieList.get(0).getTitle();
+			if(titleCheck.equals(""))
+			{
+				return false;
+			}
+			else if(title.equals(titleCheck))
+			{
+				return true;
+			}
+		}
 		return false;
+		
 	}
 	
 	/**
