@@ -38,7 +38,7 @@ public class Chatbot
 		this.questions = new String[10];
 		this.username = username;
 		this.content = "What a sunny day";
-		this.intro = "Hi, I'm john and I love to talk fellow humans.";
+		this.intro = "Hi, I'm john and I love to talk to fellow humans.";
 		this.topics = new String[7];
 		this.verbs = new String [4];
 		this.followUps = new String[5];
@@ -380,7 +380,7 @@ public class Chatbot
 	{
 		for(int index = 0; index < movieList.size(); index++)
 		{
-			String titleCheck = movieList.get(0).getTitle();
+			String titleCheck = movieList.get(index).getTitle();
 			if(titleCheck.equals(""))
 			{
 				return false;
