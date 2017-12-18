@@ -372,7 +372,7 @@ public class Chatbot
 	}
 	
 	/**
-	 * TODO - Checks the movie list for certain titles
+	 * Checks the movie list for certain movie titles
 	 * @param title
 	 * @return
 	 */

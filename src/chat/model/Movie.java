@@ -23,13 +23,13 @@ public class Movie
 	 */
 	public Movie(String title, String genre, String ratingMPA, String review, int length, LocalDate releaseDate, double starScore)
 	{
-		this.title = "";
-		this.genre = "";
-		this.ratingMPAA = "";
-		this.review = "";
-		this.length = 0;
-		this.releaseDate = LocalDate.now();	//may need to fix this
-		this.starScore = 0;
+		this.title = title;
+		this.genre = genre;
+		this.ratingMPAA = ratingMPA;
+		this.review = review;
+		this.length = length;
+		this.releaseDate = releaseDate;
+		this.starScore = starScore;
 	}
 
 	public String getTitle()
