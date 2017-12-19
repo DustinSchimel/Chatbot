@@ -19,7 +19,7 @@ public class Movie
 	
 	/**
 	 * Initializes all the data members
-	 * @param title
+	 * @param title, genre, ratingMPA, review, length, releaseDate, starScore
 	 */
 	public Movie(String title, String genre, String ratingMPA, String review, int length, LocalDate releaseDate, double starScore)
 	{
@@ -30,6 +30,15 @@ public class Movie
 		this.length = length;
 		this.releaseDate = releaseDate;
 		this.starScore = starScore;
+	}
+	
+	/**
+	 * Initializes the movie title only
+	 * @param title
+	 */
+	public Movie(String title)
+	{
+		this.title = title;
 	}
 
 	public String getTitle()

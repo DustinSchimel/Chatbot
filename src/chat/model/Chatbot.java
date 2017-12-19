@@ -98,11 +98,11 @@ public class Chatbot
 	 */
 	private void buildMovieList()
 	{
-		Movie firstMovie = new Movie("Spiderman", "Action", "PG13", "8/10", 133, LocalDate.now(), 3.8);
+		Movie firstMovie = new Movie("Spiderman", "Action", "PG-13", "8/10", 133, LocalDate.now(), 3.8);
 		Movie secondMovie = new Movie("Hidden Figures", "Biography", "PG", "9/10", 127, LocalDate.now(), 4.2);
 		Movie thirdMovie = new Movie("March of the Penguins", "Documentary", "G", "10/10", 80, LocalDate.now(), 5.0);
-		Movie fourthMovie = new Movie("Inception", "Thriller", "PG13", "9/10", 148, LocalDate.now(), 4.7);
-		Movie fifthMovie = new Movie("Jurassic Park", "Adventure", "PG13", "8/10", 127, LocalDate.now(), 4.0);
+		Movie fourthMovie = new Movie("Inception", "Thriller", "PG-13", "9/10", 148, LocalDate.now(), 4.7);
+		Movie fifthMovie = new Movie("Jurassic Park", "Adventure", "PG-13", "8/10", 127, LocalDate.now(), 4.0);
 		Movie sixthMovie = new Movie("Raiders of the Lost Ark ", "Action", "PG", "8/10", 115, LocalDate.now(), 4.5);
 		
 		movieList.add(firstMovie);
