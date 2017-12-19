@@ -98,12 +98,12 @@ public class Chatbot
 	 */
 	private void buildMovieList()
 	{
-		Movie firstMovie = new Movie("Spiderman", "Action", "PG13", "9/10", 130, LocalDate.now(), 4.5);
-		Movie secondMovie = new Movie("Hidden Figures", "Action", "PG13", "9/10", 130, LocalDate.now(), 4.5);
-		Movie thirdMovie = new Movie("Spiderman", "Action", "PG13", "9/10", 130, LocalDate.now(), 4.5);
-		Movie fourthMovie = new Movie("Spiderman", "Action", "PG13", "9/10", 130, LocalDate.now(), 4.5);
-		Movie fifthMovie = new Movie("Spiderman", "Action", "PG13", "9/10", 130, LocalDate.now(), 4.5);
-		Movie sixthMovie = new Movie("Spiderman", "Action", "PG13", "9/10", 130, LocalDate.now(), 4.5);
+		Movie firstMovie = new Movie("Spiderman", "Action", "PG13", "8/10", 133, LocalDate.now(), 3.8);
+		Movie secondMovie = new Movie("Hidden Figures", "Biography", "PG", "9/10", 127, LocalDate.now(), 4.2);
+		Movie thirdMovie = new Movie("March of the Penguins", "Documentary", "G", "10/10", 80, LocalDate.now(), 5.0);
+		Movie fourthMovie = new Movie("Inception", "Thriller", "PG13", "9/10", 148, LocalDate.now(), 4.7);
+		Movie fifthMovie = new Movie("Jurassic Park", "Adventure", "PG13", "8/10", 127, LocalDate.now(), 4.0);
+		Movie sixthMovie = new Movie("Raiders of the Lost Ark ", "Action", "PG", "8/10", 115, LocalDate.now(), 4.5);
 		
 		movieList.add(firstMovie);
 		movieList.add(secondMovie);
@@ -395,12 +395,24 @@ public class Chatbot
 	}
 	
 	/**
-	 * TODO - Checks the movie list for certain genres
+	 * Checks the movie list for certain genres
 	 * @param genre
 	 * @return
 	 */
 	public boolean movieGenreChecker(String genre)
 	{
+		for(int index = 0; index < movieList.size(); index++)
+		{
+			String genreCheck = movieList.get(index).getGenre();
+			if(genreCheck.equals(""))
+			{
+				return false;
+			}
+			else if(genre.equals(genreCheck))
+			{
+				return true;
+			}
+		}
 		return false;
 	}
 
