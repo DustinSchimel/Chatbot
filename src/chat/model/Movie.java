@@ -9,11 +9,11 @@ import java.time.LocalDate;
  */
 public class Movie
 {
-	private String title;
-	private String genre;
+	private String title = "Default title";
+	private String genre = "Default genre";
 	private String ratingMPAA;
-	private String review;
-	private int length;
+	private String review = "It's probably good, maybe.";
+	private int length = 1;
 	private LocalDate releaseDate;
 	private double starScore;
 	
