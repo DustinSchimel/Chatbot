@@ -74,4 +74,14 @@ public class ChatbotController
 		
 		return chatbotSays;															//returns the value to response in start
 	}
+	
+	public Chatbot getChatbot()
+	{
+		return chatbot;
+	}
+	
+	public PopupDisplay getDisplay()
+	{
+		return display;
+	}
 }
