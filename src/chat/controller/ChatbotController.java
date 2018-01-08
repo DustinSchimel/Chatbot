@@ -84,4 +84,9 @@ public class ChatbotController
 	{
 		return display;
 	}
+	
+	public ChatFrame getChatFrame()
+	{
+		return appFrame;
+	}
 }
