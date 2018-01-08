@@ -11,10 +11,10 @@ public class Movie
 {
 	private String title = "Default title";
 	private String genre = "Default genre";
-	private String ratingMPAA;
+	private String ratingMPAA = "PG";
 	private String review = "It's probably good, maybe.";
-	private int length = 1;
-	private LocalDate releaseDate;
+	private int length = 25;
+	private LocalDate releaseDate = LocalDate.now();
 	private double starScore;
 	
 	/**
@@ -39,10 +39,20 @@ public class Movie
 	public Movie(String title)
 	{
 		this.title = title;
+		
+		if (this.title.length() < 3 || this.title.isEmpty())
+		{
+			this.title = "Default title";
+		}
 	}
 
 	public String getTitle()
 	{
+		if (this.title.equals(""))
+		{
+			this.title = "dAKSd";
+		}
+		
 		return title;
 	}
 
