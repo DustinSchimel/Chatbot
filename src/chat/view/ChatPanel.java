@@ -120,10 +120,20 @@ public class ChatPanel extends JPanel
 					//String displayText = appController.interactWithChatbot(userText);
 					//chatArea.append(displayText);
 					//inputField.setText("");
+					scrollTextDown();
+				}
+		});
+		
+		inputField.addActionListener(new ActionListener()
+		{
+				public void actionPerformed(ActionEvent click)
+				{
+					
 					scrollTextUp();
 				}
 		});
 	}
+	
 	
 	private void scrollTextUp()
 	{
@@ -148,4 +158,5 @@ public class ChatPanel extends JPanel
 		
 		inputField.setText("");
 	}
+	
 }
