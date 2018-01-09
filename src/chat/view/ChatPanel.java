@@ -126,7 +126,7 @@ public class ChatPanel extends JPanel
 		
 		inputField.addActionListener(new ActionListener()
 		{
-				public void actionPerformed(ActionEvent click)
+				public void actionPerformed(ActionEvent enterPress)
 				{
 					
 					scrollTextUp();
