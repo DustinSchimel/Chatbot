@@ -25,6 +25,11 @@ public class ChatbotController
 		appFrame = new ChatFrame(this);
 	}
 	
+	public void handleErrors(Exception error)
+	{
+		display.displayText(error.getMessage());
+	}
+	
 	/**
 	 * Prompts the user for a response
 	 */
