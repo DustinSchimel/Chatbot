@@ -17,6 +17,10 @@ public class ChatPanel extends JPanel
 {
 	private ChatbotController appController;
 	private JButton chatButton;
+	private JButton searchButton;
+	private JButton saveButton;
+	private JButton loadButton;
+	private JButton tweetButton;
 	private JTextField inputField;
 	private JTextArea chatArea;
 	private SpringLayout appLayout;
@@ -35,11 +39,15 @@ public class ChatPanel extends JPanel
 		super();
 		this.appController = appController;
 		
-		checkerButton = new JButton("Check");
+		chatButton = new JButton("Chat", new ImageIcon(getClass().getResource("/chat/view/images/chatIcon.png")));
+		searchButton = new JButton("Search", new ImageIcon(getClass().getResource("/chat/view/images/searchIcon.png")));
+		saveButton = new JButton("Save", new ImageIcon(getClass().getResource("/chat/view/images/saveIcon.png")));
+		loadButton = new JButton("Load", new ImageIcon(getClass().getResource("/chat/view/images/loadIcon.png")));
+		tweetButton = new JButton("Tweet", new ImageIcon(getClass().getResource("/chat/view/images/tweetIcon.png")));
 		
+		checkerButton = new JButton("Check contents");
 		appLayout = new SpringLayout();
 		chatArea = new JTextArea(5, 25);
-		chatButton = new JButton("Chat");
 		inputField = new JTextField(20);
 		infoLabel = new JLabel("Type to chat with John");
 		infoLabel2 = new JLabel("I don't bite!");
@@ -69,8 +77,12 @@ public class ChatPanel extends JPanel
 	private void setupPanel()
 	{
 		this.setLayout(appLayout_1);
-		this.setBackground(Color.GREEN);
+		this.setBackground(Color.CYAN);
 		this.add(chatButton);
+		this.add(searchButton);
+		this.add(saveButton);
+		this.add(loadButton);
+		this.add(tweetButton);
 		this.add(inputField);
 		this.add(infoLabel);
 		this.add(infoLabel2);
