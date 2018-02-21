@@ -20,4 +20,7 @@ public class CTECTwitter
 	}
 	
 	public void sendTweet(String textToTweet)
+	{
+		
+	}
 }
