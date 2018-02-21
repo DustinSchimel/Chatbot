@@ -29,11 +29,6 @@ public class ChatbotController
 		appFrame = new ChatFrame(this);
 	}
 	
-	public void handleErrors(Exception error)
-	{
-		display.displayText(error.getMessage());
-	}
-	
 	/**
 	 * Prompts the user for a response
 	 */
@@ -97,5 +92,15 @@ public class ChatbotController
 	public ChatFrame getChatFrame()
 	{
 		return appFrame;
+	}
+	
+	public void handleErrors(Exception error)
+	{
+		display.displayText(error.getMessage());
+	}
+	
+	public void tweet(String text)
+	{
+		myTwitter.sendTweet(text);
 	}
 }
