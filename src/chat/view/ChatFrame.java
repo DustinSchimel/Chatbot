@@ -34,7 +34,7 @@ public class ChatFrame extends JFrame
 		this.setContentPane(appPanel); //this line SHOULD be first
 		this.setTitle("Chatting with John");
 		this.setResizable(false);
-		this.setSize(500, 500);
+		this.setSize(600, 350);
 		this.setVisible(true); //this line must be last
 	}
 	

@@ -69,7 +69,8 @@ public class ChatPanel extends JPanel
 		appLayout_1.putConstraint(SpringLayout.NORTH, loadButton, 0, SpringLayout.NORTH, saveButton);
 		appLayout_1.putConstraint(SpringLayout.SOUTH, inputField, -10, SpringLayout.SOUTH, this);
 		appLayout_1.putConstraint(SpringLayout.WEST, inputField, 10, SpringLayout.WEST, this);
-		chatPane = new JScrollPane();
+		chatArea = new JTextArea(5, 25);
+		chatPane = new JScrollPane(chatArea);
 		
 		setupChatArea();
 		setupPanel();
@@ -103,10 +104,8 @@ public class ChatPanel extends JPanel
 		this.add(infoLabel);
 		this.add(checkerButton);
 		this.add(chatPane);
-		chatArea = new JTextArea(5, 25);
 		appLayout_1.putConstraint(SpringLayout.NORTH, chatArea, 10, SpringLayout.NORTH, this);
 		appLayout_1.putConstraint(SpringLayout.SOUTH, chatArea, -43, SpringLayout.NORTH, checkerButton);
-		add(chatArea);
 		
 	}
 	
