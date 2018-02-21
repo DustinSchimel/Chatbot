@@ -1,10 +1,6 @@
 package chat.view;
 
-import javax.swing.JPanel;
-import javax.swing.JButton;
-import javax.swing.JTextField;
-import javax.swing.JTextArea;
-import javax.swing.SpringLayout;
+import javax.swing.*;
 import chat.controller.ChatbotController;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -39,10 +35,11 @@ public class ChatPanel extends JPanel
 		super();
 		this.appController = appController;
 		
+		checkerButton = new JButton("Check");
+		
 		appLayout = new SpringLayout();
 		chatArea = new JTextArea(5, 25);
 		chatButton = new JButton("Chat");
-		checkerButton = new JButton("Check");
 		inputField = new JTextField(20);
 		infoLabel = new JLabel("Type to chat with John");
 		infoLabel2 = new JLabel("I don't bite!");
