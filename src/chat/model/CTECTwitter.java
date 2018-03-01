@@ -51,4 +51,45 @@ public class CTECTwitter
 			appController.handleErrors(otherError);
 		}
 	}
+	
+	public String getMostCommonWord(String username)
+	{
+		String mostCommon = "";
+		
+		collectTweets(username);
+		
+		return mostCommon;
+	}
+	
+	public void collectTweets(String username)
+	{
+		searchedTweets.clear();
+		tweetedWords.clear();
+		
+		Paging statusPage = new Paging(1, 100);
+		int page = 1;
+		long lastID = Long.MAX_VALUE;
+		
+		while(page <= 10)
+		{
+			statusPage.setPage(page);
+			try
+			{
+				ResponseList<Status> listedTweets = chatbotTwitter.getUserTimeline(username, statusPage);
+				for(Status current : listedTweets)
+				{
+					if(current.getId() < lastID)
+					{
+						searchedTweets.add(current);
+						lastID = current.getId();
+					}
+				}
+			}
+			catch(TwitterException searchTweetError)
+			{
+				appController.handleErrors(searchTweetError);
+			}
+			page++;
+		}
+	}
 }
