@@ -58,6 +58,8 @@ public class CTECTwitter
 		
 		collectTweets(username);
 		turnStatusesToWords();
+		totalWordCount = tweetedWords.size();
+		String [] boring = createIgnoredWordArray();
 		
 		return mostCommon;
 	}
@@ -109,11 +111,47 @@ public class CTECTwitter
 	
 	private String removePunctuation(String currentString)
 	{
-		return null;
+		String punctuation = ".,'?!:;\"() {}^[]<>-";
+		
+		String scrubbedString = "";
+		for (int index = 0; index < currentString.length(); index++)
+		{
+			if (punctuation.indexOf(currentString.charAt(index)) == -1)
+			{
+				scrubbedString += currentString.charAt(index);
+			}
+		}
+		return scrubbedString;
 	}
 	
 	private String [] createIgnoredWordArray()
 	{
-		return null;
+		String [] boringWords;
+		String fileText = IOController.loadFromFile(appController, "commonWords.txt");
+		int wordCount = 0;
+		
+		Scanner wordScanner = new Scanner(fileText);
+		
+		while(wordScanner.hasNextLine())
+		{
+			wordScanner.nextLine();
+			wordCount++;
+		}
+		
+		boringWords = new String [wordCount];
+		wordScanner.close();
+		
+		// Alternative file loading method.
+		// Uses the InputStream class
+		// Notice the lack of try/catch
+		
+		wordScanner = new Scanner(this.getClass().getResourceAsStream("data/commonWords.txt"));
+		for(int index = 0; index < boringWords.length; index++)
+		{
+			boringWords[index] = wordScanner.nextLine();
+		}
+		
+		wordScanner.close();
+		return boringWords;
 	}
 }
