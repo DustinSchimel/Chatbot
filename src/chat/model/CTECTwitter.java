@@ -37,6 +37,7 @@ public class CTECTwitter
 		this.searchedTweets = new ArrayList<Status>();
 		this.tweetedWords = new ArrayList<String>();
 		this.totalWordCount = 0;
+		this.wordsAndCount = new HashMap<String, Integer>();
 	}
 	
 	public void sendTweet(String textToTweet)
@@ -63,8 +64,8 @@ public class CTECTwitter
 		turnStatusesToWords();
 		totalWordCount = tweetedWords.size();
 		String [] boring = createIgnoredWordArray();
-		trimTheBoringWords(boring);
 		removeBlanks();
+		trimTheBoringWords(boring);
 		generateWordCount();
 		
 		
@@ -120,7 +121,7 @@ public class CTECTwitter
 	{
 		for(Status currentStatus : searchedTweets)
 		{
-			String tweetText = currentStatus.getText();
+			String tweetText = currentStatus.getText().toLowerCase();
 			tweetText = tweetText.replace("\n", " ");
 			String [] tweetWords = tweetText.split(" ");
 			for(int index = 0; index < tweetWords.length; index++)
@@ -182,7 +183,7 @@ public class CTECTwitter
 		{
 			for (int removeIndex = 0; removeIndex < boringWords.length; removeIndex++)
 			{
-				if (tweetedWords.get(index).equals(boringWords[removeIndex]))
+				if (tweetedWords.get(index).equalsIgnoreCase(boringWords[removeIndex]))
 				{
 					tweetedWords.remove(index);
 					removeIndex = boringWords.length;
