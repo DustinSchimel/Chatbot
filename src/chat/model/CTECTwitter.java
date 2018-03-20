@@ -262,4 +262,44 @@ public class CTECTwitter
 		
 		return entries;
 	}
+	
+	public String analyzeTwitterForTopic(String topic)
+	{//#AvengersInfinityWar
+		String results = "";
+		searchedTweets.clear();
+		Query twitterQuery = new Query(topic);
+		int resultMax = 750;
+		long lastId = Long.MAX_VALUE;
+		twitterQuery.setGeoCode(new GeoLocation(40.6976701, -74.2598617), 100, Query.MILES);	//New York, 100 mile radius
+		twitterQuery.setLang("English");	//English filter
+		twitterQuery.setSince("2018-01-01");	//Since the beggining of the year
+		ArrayList<Status> matchingTweets = new ArrayList<Status>();
+		while(searchedTweets.size() < resultMax)
+		{
+			try
+			{
+				QueryResult resultingTweets = chatbotTwitter.search(twitterQuery);
+				
+			}
+			catch(TwitterException error)
+			{
+				appController.handleErrors(error);
+			}
+			
+			twitterQuery.setMaxId(lastId - 1);
+		}
+		
+		results += "Talk about the search results";
+		results += "Find a tweet that will pass one of the checkers in chatbot";
+		
+		int randomTweet = (int) (Math.random() * matchingTweets.size());
+		results += matchingTweets.get(randomTweet);
+		
+		
+		
+		Paging statusPage = new Paging(1, 100);
+		int page = 1;
+		
+		return results;
+	}
 }
