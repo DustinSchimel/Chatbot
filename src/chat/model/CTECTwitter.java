@@ -274,19 +274,18 @@ public class CTECTwitter
 		twitterQuery.setLang("English");	//English filter
 		twitterQuery.setSince("2018-01-01");	//Since the beggining of the year
 		ArrayList<Status> matchingTweets = new ArrayList<Status>();
-		while(searchedTweets.size() < resultMax)
+		while(matchingTweets.size() < resultMax)
 		{
 			try
 			{
 				QueryResult resultingTweets = chatbotTwitter.search(twitterQuery);
 				
-				for(Status current : resultingTweets.getTweets())
+				for(Status currentTweet : resultingTweets.getTweets())
 				{
-					if(current.getId() < lastID)
+					if(currentTweet.getId() < lastID)
 					{
-						searchedTweets.add(current);
-						matchingTweets.add(current);
-						lastID = current.getId();
+						matchingTweets.add(currentTweet);
+						lastID = currentTweet.getId();
 					}
 				}
 			}
