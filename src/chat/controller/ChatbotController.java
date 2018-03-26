@@ -110,4 +110,9 @@ public class ChatbotController
 	{
 		return myTwitter.getMostCommonWord(text);
 	}
+	
+	public String checkTopic(String topic)
+	{
+		return myTwitter.analyzeTwitterForTopic(topic);
+	}
 }

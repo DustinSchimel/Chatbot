@@ -44,7 +44,7 @@ public class ChatPanel extends JPanel
 		loadButton = new JButton("Load", new ImageIcon(getClass().getResource("/chat/view/images/loadIcon.png")));
 		tweetButton = new JButton("Tweet", new ImageIcon(getClass().getResource("/chat/view/images/tweetIcon.png")));
 		
-		checkerButton = new JButton("Check contents");
+		checkerButton = new JButton("Check topic");
 		appLayout = new SpringLayout();
 		inputField = new JTextField(20);
 		infoLabel = new JLabel("Type to chat with John");
@@ -154,6 +154,17 @@ public class ChatPanel extends JPanel
 					String usernameToSearch = inputField.getText();
 					
 					chatArea.setText(appController.search(usernameToSearch));
+				}
+		});
+		
+		checkerButton.addActionListener(new ActionListener()
+		{
+				public void actionPerformed(ActionEvent click)
+				{
+					String topicToCheck = inputField.getText();
+					
+					chatArea.setText(appController.checkTopic(topicToCheck));
+					
 				}
 		});
 		

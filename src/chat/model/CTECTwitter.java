@@ -269,7 +269,7 @@ public class CTECTwitter
 		searchedTweets.clear();
 		Query twitterQuery = new Query(topic);
 		int resultMax = 750;
-		long lastId = Long.MAX_VALUE;
+		long lastID = Long.MAX_VALUE;
 		twitterQuery.setGeoCode(new GeoLocation(40.6976701, -74.2598617), 100, Query.MILES);	//New York, 100 mile radius
 		twitterQuery.setLang("English");	//English filter
 		twitterQuery.setSince("2018-01-01");	//Since the beggining of the year
@@ -280,26 +280,58 @@ public class CTECTwitter
 			{
 				QueryResult resultingTweets = chatbotTwitter.search(twitterQuery);
 				
+				for(Status current : resultingTweets.getTweets())
+				{
+					if(current.getId() < lastID)
+					{
+						searchedTweets.add(current);
+						matchingTweets.add(current);
+						lastID = current.getId();
+					}
+				}
 			}
 			catch(TwitterException error)
 			{
 				appController.handleErrors(error);
 			}
 			
-			twitterQuery.setMaxId(lastId - 1);
+			twitterQuery.setMaxId(lastID - 1);
 		}
 		
-		results += "Talk about the search results";
-		results += "Find a tweet that will pass one of the checkers in chatbot";
+		results += "Out of " + resultMax + " tweets here is a random one related to " + topic + " that was posted within 100 miles of New York City in English and ";
+		results += "at least after the start of the 2018 year: ";
 		
 		int randomTweet = (int) (Math.random() * matchingTweets.size());
 		results += matchingTweets.get(randomTweet);
 		
-		
-		
+		/*
 		Paging statusPage = new Paging(1, 100);
 		int page = 1;
+		long lastID = Long.MAX_VALUE;
 		
+		while(page <= 10)
+		{
+			statusPage.setPage(page);
+			try
+			{
+				ResponseList<Status> listedTweets = chatbotTwitter.getUserTimeline(username, statusPage);
+				for(Status current : listedTweets)
+				{
+					if(current.getId() < lastID)
+					{
+						searchedTweets.add(current);
+						lastID = current.getId();
+					}
+				}
+			}
+			catch(TwitterException searchTweetError)
+			{
+				appController.handleErrors(searchTweetError);
+			}
+			page++;
+		}
+		
+		*/
 		return results;
 	}
 }
